@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Main from "./Main";
+import AcademicXP from "./AcademicXP";
 
-describe("Main", () => {
+describe("AcademicXP", () => {
   test("matches snapshot", () => {
-    const wrapper = shallow(<Main />);
+    const wrapper = shallow(<AcademicXP />);
     expect(wrapper).toMatchSnapshot();
   });
 });

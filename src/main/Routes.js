@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Switch } from 'react-router';
+import { Route } from 'react-router';
+import { Switch, Redirect } from 'react-router-dom';
 import Home from '../components/Home/Home';
 
 const Routes = () => {
@@ -9,3 +10,5 @@ const Routes = () => {
 		</Switch>
 	);
 };
+
+export default Routes;

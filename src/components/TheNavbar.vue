@@ -12,10 +12,10 @@
 					<router-link class="link" :to="{ name: '' }">Portfolio</router-link>
 				</li>
 				<li>
-					<router-link class="link" :to="{ name: '' }">Professional</router-link>
+					<router-link class="link" :to="{ name: 'Professional' }">Professional</router-link>
 				</li>
 				<li>
-					<router-link class="link" :to="{ name: '' }">Academic</router-link>
+					<router-link class="link" :to="{ name: 'Academic' }">Academic</router-link>
 				</li>
 				<li>
 					<router-link class="link" :to="{ name: '' }">About</router-link>
@@ -34,10 +34,10 @@
 						<router-link class="link" :to="{ name: '' }">Portfolio</router-link>
 					</li>
 					<li>
-						<router-link class="link" :to="{ name: '' }">Professional</router-link>
+						<router-link class="link" :to="{ name: 'Professional' }">Professional</router-link>
 					</li>
 					<li>
-						<router-link class="link" :to="{ name: '' }">Academic</router-link>
+						<router-link class="link" :to="{ name: 'Academic' }">Academic</router-link>
 					</li>
 					<li>
 						<router-link class="link" :to="{ name: '' }">About</router-link>
@@ -151,10 +151,12 @@ header {
 		.branding {
 			display: flex;
 			align-items: center;
+			
 
 			img {
 				width: 50px;
 				transition: 0.5s ease all;
+				border-radius: 50%;
 			}
 		}
 

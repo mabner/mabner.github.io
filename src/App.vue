@@ -1,6 +1,6 @@
 <template>
 	<div class="app">
-		<TheNavbar/>
+		<TheNavbar />
 		<router-view />
 	</div>
 </template>
@@ -8,8 +8,8 @@
 <script>
 import TheNavbar from './components/TheNavbar';
 export default {
-    name: "App",
-    components: { TheNavbar }
+	name: "App",
+	components: { TheNavbar }
 };
 </script>
 
@@ -27,6 +27,7 @@ export default {
 	position: relative;
 	background-color: #f1f1f1;
 }
+
 .container {
 	padding: 0 20px;
 	max-width: 1140px;

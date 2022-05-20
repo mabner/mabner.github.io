@@ -50,6 +50,7 @@ export default {
 
 		h2 {
 			font-size: 50px;
+
 			@media (min-width: 550px) {
 				font-size: 80px;
 			}
@@ -59,6 +60,7 @@ export default {
 			max-width: 365px;
 			margin-bottom: 16px;
 		}
+
 		hr:nth-child(4) {
 			height: 6px;
 			background-color: #fff;

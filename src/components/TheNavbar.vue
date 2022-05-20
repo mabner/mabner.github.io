@@ -1,5 +1,5 @@
 <template>
-	<header :class="{ 'scrolled-nav': scrollPosition }">
+	<header :class="{ 'scrolled-nav': scrolledNav }">
 		<nav>
 			<div class="branding">
 				<img src="@/assets/img/profile-img.jpg" alt="Profile picture" />
@@ -26,7 +26,7 @@
 					:class="{ 'icon-active': mobileNav }"></i>
 			</div>
 			<transition name="mobile-nav">
-				<ul class="dropdown-nav" v-show="mobileNav">
+				<ul v-show="mobileNav" class="dropdown-nav">
 					<li>
 						<router-link class="link" :to="{ name: 'Home' }">Home</router-link>
 					</li>
@@ -53,11 +53,49 @@ export default {
 	name: 'TheNavbar',
 	data() {
 		return {
-			scrollPosition: false,
-			mobile: false,
-			mobileNav: false,
-			windowWidth: false,
+			scrolledNav: null,
+			mobile: null,
+			mobileNav: null,
+			windowWidth: null,
 		};
+	},
+
+	created() {
+		window.addEventListener("resize", this.checkScreenSize);
+		this.checkScreenSize();
+	},
+
+	mounted() {
+		window.addEventListener("scroll", this.updateScroll);
+	},
+
+	methods: {
+		updateScroll() {
+			const scrollPosition = window.scrollY;
+			if (scrollPosition > 50) {
+				this.scrolledNav = true;
+				return;
+			} else {
+				this.scrolledNav = false;
+				return;
+			}
+		},
+
+		toggleMobileNav() {
+			this.mobileNav = !this.mobileNav;
+		},
+
+		checkScreenSize() {
+			this.windowWidth = window.innerWidth;
+			if (this.windowWidth <= 750) {
+				this.mobile = true;
+				return;
+			} else {
+				this.mobile = false;
+				this.mobileNav = false;
+				return;
+			}
+		},
 	},
 };
 </script>
@@ -144,6 +182,56 @@ header {
 
 		.icon-active {
 			transform: rotate(180deg);
+		}
+
+		.dropdown-nav {
+			display: flex;
+			flex-direction: column;
+			position: fixed;
+			width: 100%;
+			max-width: 250px;
+			height: 100%;
+			background-color: #fff;
+			top: 0;
+			left: 0;
+
+			li {
+				margin-left: 0;
+
+				.link {
+					color: black;
+				}
+			}
+		}
+
+		.mobile-nav-enter-active,
+		.mobile-nav-leave-active {
+			transition: 0.3s ease all;
+		}
+
+		.mobile-nav-enter-from,
+		.mobile-nav-leave-to {
+			transform: translateX(-250px);
+		}
+
+		.mobile-nav-enter-to {
+			transform: translateX(0);
+		}
+	}
+}
+
+.scrolled-nav {
+	background-color: black;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+	nav {
+		padding: 8px 0;
+
+		.branding {
+			img {
+				width: 40px;
+				box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+			}
 		}
 	}
 }

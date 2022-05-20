@@ -120,6 +120,13 @@ header {
 			}
 		}
 
+		.navigation {
+			display: flex;
+			align-items: center;
+			flex: 1;
+			justify-content: flex-end;
+		}
+
 		.icon {
 			display: flex;
 			position: absolute;

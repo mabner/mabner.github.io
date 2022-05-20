@@ -17,6 +17,9 @@
 export default {
 	name: 'HomeView',
 	components: {},
+	mounted() {
+		document.title = 'Marcos Leite';
+	},
 };
 </script>
 

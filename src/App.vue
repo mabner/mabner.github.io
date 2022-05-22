@@ -1,14 +1,8 @@
-<script setup>
-
-</script>
-
 <template>
-  <div>
-    <h1>Marcos Leite</h1>
-    <p>Coming soon...</p>
+  <div class="app">
+    <router-view />
   </div>
 </template>
 
 <style lang="scss">
-
 </style>

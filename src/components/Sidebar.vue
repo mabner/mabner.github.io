@@ -32,10 +32,11 @@
 
 <script setup>
 import { ref } from 'vue'
-const is_expanded = ref(false)
+const is_expanded = ref(localStorage.getItem('is_expanded') === 'true')
 
 const ToggleMenu = () => {
 	is_expanded.value = !is_expanded.value //keeps inverting the value on user click (true>false>true>...)
+	localStorage.setItem('is_expanded', is_expanded.value) //saves menu state on localStorage
 }
 </script>
 
@@ -123,7 +124,8 @@ aside {
 				color: var(--light);
 			}
 
-			&:hover, &.router-link-exact-active {
+			&:hover,
+			&.router-link-exact-active {
 				background-color: var(--dark-alt);
 
 				.material-icons,
@@ -131,6 +133,7 @@ aside {
 					color: var(--primary);
 				}
 			}
+
 			&.router-link-exact-active {
 				border-right: 5px solid var(--primary);
 			}

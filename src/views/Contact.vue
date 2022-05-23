@@ -2,7 +2,7 @@
 	<div>
 		<main class="contact-page">
 			<h1>Contato</h1>
-			<form name="contact-me" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+			<form name="contact-me" method="post" data-netlify="true" data-netlify-honeypot="bot-field" netlify>
 				<input type="hidden" name="form-name" value="contact-me" />
 				<div class="form-group">
 					<label for="name">Nome</label>

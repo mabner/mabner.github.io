@@ -23,8 +23,8 @@ import Sidebar from './components/Sidebar.vue';
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Fira Code', monospace;
-  // font-family: 'Roboto Flex', sans-serif;
+  // font-family: 'Fira Code', monospace;
+  font-family: 'Roboto Flex', sans-serif;
 }
 
 body {

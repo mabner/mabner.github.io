@@ -20,6 +20,10 @@ const router = createRouter({
 			path: '/overview',
 			component: () => import('../views/Overview.vue'),
 		},
+		{
+			path: '/terminal',
+			component: () => import('../views/Terminal.vue'),
+		}
 	],
 });
 

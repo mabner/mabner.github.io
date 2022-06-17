@@ -26,6 +26,11 @@
 				<span class="material-icons">email</span>
 				<span class="text">Contato</span>
 			</router-link>
+			<router-link class="button" to="/terminal">
+				<span class="material-icons">code</span>
+				<span class="text">Terminal</span>
+			</router-link>
+
 		</div>
 	</aside>
 </template>
